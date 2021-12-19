@@ -15,6 +15,6 @@ export async function getStaticProps() {
     props: {
       episodes: data,
     },
-    revalidade: 60 * 60 * 8,
-  }
+    revalidate: 60 * 60 * 8,
+  };
 };
