@@ -117,6 +117,14 @@
             filter: brightness(0.8);
         }
 
+        &.isActive {
+            filter: invert(49%) sepia(97%) saturate(876%) hue-rotate(106deg) brightness(102%) contrast(97%);;
+        }
+
+        &.isActive:hover {
+            filter: invert(49%) sepia(97%) saturate(876%) hue-rotate(106deg) brightness(90%) contrast(97%);;
+        }
+
         &.playButton {
             width: 4rem;
             height: 4rem;
