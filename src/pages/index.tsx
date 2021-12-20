@@ -27,6 +27,7 @@ type HomeProps = {
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   return (
+    // TODO Add custom scrollbar
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
         <h2>Últimos lançamentos</h2>
@@ -51,6 +52,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
+                {/* TODO Make this button a component */}
                 <button type="button">
                   <img src="/play-green.svg" alt="Tocar episódio" />
                 </button>
@@ -88,14 +90,17 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   </td>
 
                   <td>
+                    {/* TODO Block title from overflow and add elipsis (...). If title is to big show only on hover */}
                     <a href="">{episode.title}</a>
                   </td>
 
+                  {/* TODO Block members from overflow and add elipsis (...). If title is to big show only on hover */}
                   <td>{episode.members}</td>
                   <td style={{ width: 100 }}>{episode.publishedAt}</td>
                   <td>{episode.durationAsString}</td>
 
                   <td>
+                    {/* TODO Make this button a component */}
                     <button type="button">
                       <img src="/play-green.svg" alt="Tocar episódio" />
                     </button>
