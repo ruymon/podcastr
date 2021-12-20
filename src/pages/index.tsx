@@ -28,13 +28,13 @@ type HomeProps = {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
-  const player = useContext(PlayerContext);
+  const { play } = useContext(PlayerContext);
 
   return (
     // TODO Add custom scrollbar
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
-        <h2>Últimos lançamentos {player} </h2>
+        <h2>Últimos lançamentos</h2>
 
         <ul>
           {/* TODO - Refactor this into a component */}
@@ -59,7 +59,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 </div>
 
                 {/* TODO Make this button a component */}
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>
                   <img src="/play-green.svg" alt="Tocar episódio" />
                 </button>
               </li>
