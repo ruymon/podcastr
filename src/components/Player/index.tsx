@@ -54,7 +54,6 @@ export function Player() {
                 </div>
 
                 <div className={styles.buttons}>
-                {/* TODO Block button cursor when they are inactive */}
                     <button type="button" disabled={!episode}>
                         <img src="/shuffle.svg" alt="Embaralhar" />
                     </button>
