@@ -13,7 +13,6 @@ type Episode = {
   id: string;
   title: string;
   thumbnail: string;
-  description: string;
   members: string;
   duration: number;
   durationAsString: string;
@@ -96,7 +95,9 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
                   <td>
                     {/* TODO Block title from overflow and add elipsis (...). If title is to big show only on hover */}
-                    <a href="">{episode.title}</a>
+                    <Link href={`/episodes/${episode.id}`}>
+                      <a>{episode.title}</a>
+                    </Link>
                   </td>
 
                   {/* TODO Block members from overflow and add elipsis (...). If title is to big show only on hover */}
@@ -137,7 +138,6 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episode.title,
       members: episode.members,
       thumbnail: episode.thumbnail,
-      description: episode.description,
       publishedAt: format(parseISO(episode.published_at), 'd MMM yy' , { locale: ptBR }),
       duration: Number(episode.file.duration),
       durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
