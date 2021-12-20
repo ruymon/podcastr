@@ -1,10 +1,12 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
 import ptBR from 'date-fns/locale/pt-BR';
-import Link from 'next/link';
-import Image from 'next/image';
-import { GetStaticPaths, GetStaticProps } from 'next'
 
+import { usePlayer } from '../../contexts/PlayerContext';
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
@@ -27,6 +29,8 @@ type EpisodeProps = {
 }
 
 export default function Episode({ episode }: EpisodeProps) {
+    const { } = usePlayer;
+
     return (
         <div className={styles.episodeWrapper}>
             <div className={styles.episode}>
