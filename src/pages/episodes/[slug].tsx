@@ -97,7 +97,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
     const { data } = await api.get(`episodes/${slug}`);
 
-    const episode = {
+    const episode: any = {
         id: data.id,
         title: data.title,
         members: data.members,
