@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import format from 'date-fns/format';
@@ -34,6 +35,28 @@ export default function Episode({ episode }: EpisodeProps) {
     return (
         <div className={styles.episodeWrapper}>
             <div className={styles.episode}>
+
+                <Head>
+                    {/* Primary Meta Tags */}
+                    <title>{episode.title} | Podcastr</title>
+                    <meta name="title" content={episode.title}>
+                    <meta name="description" content={episode.description}>
+
+                    {/* Open Graph / Facebook */}
+                    <meta property="og:type" content="website">
+                    {/* <meta property="og:url" content="https://metatags.io/"> */}
+                    <meta property="og:title" content={episode.title}>
+                    <meta property="og:description" content={episode.description}>
+                    <meta property="og:image" content={episode.thumbnail}>
+
+                    {/* Twitter */}
+                    <meta property="twitter:card" content="summary_large_image">
+                    {/* <meta property="twitter:url" content="https://metatags.io/"> */}
+                    <meta property="twitter:title" content={episode.title}>
+                    <meta property="twitter:description" content={episode.description}>
+                    <meta property="twitter:image" content={episode.thumbnail}>
+                </Head>
+
                 <div className={styles.thumbnailContainer}>
                     <Link href="/">
                         <button type="button">
